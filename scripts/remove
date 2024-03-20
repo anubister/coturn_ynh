@@ -47,6 +47,9 @@ ynh_script_progression --message="Removing the dedicated system user..." --weigh
 # Delete a system user
 deluser turnserver ssl-cert
 
+# Close firewall (https://github.com/YunoHost/issues/issues/1607)
+ynh_exec_fully_quiet yunohost firewall allow UDP -4 49152:65535
+
 #=================================================
 # END OF SCRIPT
 #=================================================
