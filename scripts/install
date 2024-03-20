@@ -109,6 +109,9 @@ chown -R turnserver:root /var/log/$app
 chown turnserver:root /etc/turnserver.conf
 setfacl -R -m user:turnserver:rwX  /var/log/$app
 
+# Open Firewall (https://github.com/YunoHost/issues/issues/1607)
+ynh_exec_fully_quiet yunohost firewall allow UDP -4 49152:65535
+
 #=================================================
 # INTEGRATE SERVICE IN YUNOHOST
 #=================================================
