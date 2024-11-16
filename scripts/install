@@ -18,7 +18,7 @@ ynh_app_setting_set --app=$app --key=no_sso --value=true
 #=================================================
 # CREATE A DH FILE
 #=================================================
-ynh_script_progression --message="Creating a dhparam file..." --weight=3
+ynh_script_progression --message="Creating a dhparam file (can take up to 30min on slow ARM devices)..." --weight=3
 
 # Make dhparam cert for Coturn if it doesn't exist
 if [ ! -e /etc/ssl/private/dh2048.pem ]
